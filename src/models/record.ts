@@ -8,7 +8,7 @@ export interface ICCRecord {
     price: number;
     variant?: string;
     checked?: boolean;
-    publishDate?: string;
+    publishDate: number;
     checkedDate?: number;
     recordDate?: number;
 }
@@ -20,7 +20,7 @@ export class CCRecord implements ICCRecord {
     price: number;
     variant: string;
     checked: boolean;
-    publishDate: string;
+    publishDate: number;
     checkedDate: number;
     recordDate: number;
 
@@ -41,10 +41,6 @@ export class CCRecord implements ICCRecord {
             .join("_")
             .replace(/[^a-zA-Z0-9]/g, "");
 
-        if (!isNaN(data.publishDate as any)) {
-            this.publishDate = moment(data.publishDate).format(DATE_FORMAT);
-        }
-
         this.publishDateMoment = moment(this.publishDate);
     }
 
@@ -64,5 +60,9 @@ export class CCRecord implements ICCRecord {
 
     public getPublishDate() {
         return this.publishDateMoment.format(DATE_FORMAT);
+    }
+
+    public insertable() {
+        return JSON.parse(JSON.stringify(this));
     }
 }

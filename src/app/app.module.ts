@@ -1,9 +1,11 @@
-import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { DbHandlingService } from "./db-handling.service";
+import { DbHandlingService } from "./services/db-handling.service";
+import { AddFormModule } from "./add-form/add-form.module";
 
 @NgModule({
   declarations: [
@@ -11,7 +13,9 @@ import { DbHandlingService } from "./db-handling.service";
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AddFormModule,
+    BrowserAnimationsModule
   ],
   providers: [DbHandlingService],
   bootstrap: [AppComponent]

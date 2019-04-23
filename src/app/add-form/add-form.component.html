@@ -1,0 +1,29 @@
+<form [formGroup]="ccRecordForm" (ngSubmit)="onSubmit()" class="flex fcol">
+  <mat-form-field>
+    <input matInput type="text" formControlName="title" placeholder="Title" autocomplete="off" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let title of filteredTitles | async" [value]="title">
+        {{title}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="number" formControlName="volume" placeholder="Volume">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="number" formControlName="price" placeholder="Price">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="text" formControlName="variant" placeholder="Variant" autocomplete="off">
+  </mat-form-field>
+
+  <mat-slide-toggle formControlName="checked">Checked</mat-slide-toggle>
+
+  <mat-form-field>
+    <input matInput type="date" formControlName="publishDate" placeholder="Publish Date">
+  </mat-form-field>
+  <button mat-button type="submit" [disabled]="ccRecordForm.invalid">Submit</button>
+</form>
