@@ -6,8 +6,5 @@ import { IndexedDB } from "src/dbHandlers/indexedDB";
   providedIn: "root"
 })
 export class DbHandlingService {
-  db: ICCDBHandler;
-  constructor() {
-    this.db = new IndexedDB();
-  }
+  db: ICCDBHandler = new IndexedDB();
 }

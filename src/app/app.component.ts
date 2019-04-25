@@ -55,6 +55,8 @@ export class AppComponent {
       publishDate: 1548655200000,
       volume: 1
     }];
+
+    /*
     let records: CCRecord[];
     Rx.concat(...data.map(d => db.db.insert(d)))
       .pipe(toArray())
@@ -84,5 +86,6 @@ export class AppComponent {
           x => console.log("DelRes", x)
         );
     }, 2000);
+    */
   }
 }

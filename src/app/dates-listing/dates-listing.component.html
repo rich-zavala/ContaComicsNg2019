@@ -1,0 +1,4 @@
+<app-years-listing (yearSelected)="updateDaysListing($event)"></app-years-listing>
+<ng-container *ngIf="dates">
+  <app-days-listing *ngFor="let date of dates" [day]="date"></app-days-listing>
+</ng-container>

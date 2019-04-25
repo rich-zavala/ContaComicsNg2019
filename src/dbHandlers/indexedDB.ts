@@ -169,7 +169,7 @@ export class IndexedDB implements ICCDBHandler {
                     .pipe(toArray())
                     .subscribe(
                         (years: ICCYear[]) => {
-                            observer.next(lodash.sortBy(years, "year"));
+                            observer.next(lodash.reverse(lodash.sortBy(years, "year")));
                             observer.complete();
                         }
                     );
@@ -304,10 +304,13 @@ export class IndexedDB implements ICCDBHandler {
             this.getDay(day)
                 .subscribe(
                     dayData => {
-                        Rx.merge(dayData.records.map(recordId => Rx.from(this.dbRecords.getItem(recordId))))
+                        Rx.merge(...dayData.records.map(recordId => Rx.from(this.dbRecords.getItem(recordId))))
                             .pipe(toArray())
                             .subscribe(
-                                records => console.log("DayRecords", records)
+                                records => {
+                                    observer.next(records);
+                                    observer.complete();
+                                }
                             );
                     }
                 );

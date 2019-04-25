@@ -1,0 +1,3 @@
+<mat-button-toggle-group (change)="updateYearSelected($event)">
+  <mat-button-toggle *ngFor="let year of years" [value]="year" [checked]="year.year === selected.year">{{year.year}}</mat-button-toggle>
+</mat-button-toggle-group>
