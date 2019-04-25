@@ -1,3 +1,6 @@
+<div *ngIf="day">
+  {{day.date}} {{day.total | currency}}
+</div>
 <ng-container *ngFor="let cc of records">
   <div>{{cc.title}} #{{cc.volume}}</div>
 </ng-container>

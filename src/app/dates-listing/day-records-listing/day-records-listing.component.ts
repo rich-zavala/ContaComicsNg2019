@@ -4,11 +4,11 @@ import { ICCDay } from "src/models/day";
 import { ICCRecord } from "src/models/record";
 
 @Component({
-  selector: "app-days-listing",
-  templateUrl: "./days-listing.component.html",
-  styleUrls: ["./days-listing.component.less"]
+  selector: "app-day-records-listing",
+  templateUrl: "./day-records-listing.component.html",
+  styleUrls: ["./day-records-listing.component.less"]
 })
-export class DaysListingComponent implements OnInit {
+export class DayRecordsListingComponent implements OnInit {
   @Input() day: ICCDay;
   @Output() recordDeleted: EventEmitter<ICCRecord>;
 

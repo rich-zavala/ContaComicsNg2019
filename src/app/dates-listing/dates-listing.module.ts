@@ -5,7 +5,7 @@ import { MatButtonToggleModule } from "@angular/material/button-toggle";
 import { RecordRowModule } from "../record-row/record-row.module";
 
 import { YearsListingComponent } from "./years-listing/years-listing.component";
-import { DaysListingComponent } from "./days-listing/days-listing.component";
+import { DayRecordsListingComponent } from "./day-records-listing/day-records-listing.component";
 import { DatesListingComponent } from "./dates-listing.component";
 
 import { CollectionService } from "../services/collection.service";
@@ -18,7 +18,7 @@ import { CollectionService } from "../services/collection.service";
   ],
   declarations: [
     YearsListingComponent,
-    DaysListingComponent,
+    DayRecordsListingComponent,
     DatesListingComponent
   ],
   exports: [

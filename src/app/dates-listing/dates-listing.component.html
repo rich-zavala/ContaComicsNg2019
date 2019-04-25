@@ -1,4 +1,11 @@
 <app-years-listing (yearSelected)="updateDaysListing($event)"></app-years-listing>
+<ng-container *ngIf="yearSelected">
+  <div>Year total: {{yearSelected.total | currency}}</div>
+  <hr>
+</ng-container>
 <ng-container *ngIf="dates">
-  <app-days-listing *ngFor="let date of dates" [day]="date"></app-days-listing>
+  <ng-container *ngFor="let date of dates">
+    <app-day-records-listing [day]="date"></app-day-records-listing>
+    <hr>
+  </ng-container>
 </ng-container>

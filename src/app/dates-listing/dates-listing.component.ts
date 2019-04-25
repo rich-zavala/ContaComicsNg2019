@@ -20,6 +20,7 @@ export class DatesListingComponent implements OnInit {
   }
 
   private updateDaysListing($event: ICCYear) {
+    this.yearSelected = $event;
     this.dates = undefined;
     this.db.updateDates($event.year);
   }
